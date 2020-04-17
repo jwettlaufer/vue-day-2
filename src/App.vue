@@ -2,17 +2,21 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <h1>Vue Day 2</h1>
+    <Accordion title="Click Here to Expand" content=" Hello, World! I hide and show based on Vue class binding."/>
+    <Accordion title="What is Vue?" content="A popular JavaScript library, used for creating dynamic and reactive webpages!"/>
     <TodoList />
   </div>
 </template>
 
 <script>
 import TodoList from './components/TodoList.vue'
+import Accordion from './components/Accordion.vue'
 
 export default {
   name: 'App',
   components: {
-    TodoList
+    TodoList,
+    Accordion
   }
 }
 </script>
