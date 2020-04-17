@@ -1,6 +1,13 @@
 <template>
   <section>
     <h2>To-Do List</h2>
+    <form>
+      <label for="new-todo">
+        Add a New To-Do:
+        <input type="text" name="to-do" v-model="newTodo">
+      </label>
+      <input type="submit" value="Submit">
+    </form>
     <ul>
       <Todo v-for="todo in todos" :key="todo.task" :todo="todo" v-on:complete-todo="completeTodo" />
     </ul>
@@ -17,6 +24,7 @@ export default {
   },
   data() {
     return {
+      newTodo: "",
       todos: [
         {
           task: "Buy Milk",
@@ -35,15 +43,15 @@ export default {
           completed: false
         }
       ]
-    }
+    };
   },
   methods: {
-      completeTodo(todo) {
-          const todoIndex = this.todos.indexOf(todo);
-          this.todos[todoIndex].completed = true;
-      }
+    completeTodo(todo) {
+      const todoIndex = this.todos.indexOf(todo);
+      this.todos[todoIndex].completed = true;
+    }
   }
-}
+};
 </script>
 
 <style>
